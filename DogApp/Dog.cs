@@ -18,7 +18,7 @@ namespace DogApp
 			}
 		}
 
-		public static int DogHappiness(List<string> toys)
+		public int DogHappiness(List<string> toys)
 		{
 			int happinessMeter = 0;
 			if (toys.Count >= 10)
@@ -35,8 +35,13 @@ namespace DogApp
 			}
 			return happinessMeter;
 		}
+		//Tests with the same List<string> as DogHappiness() above
+		public int UseList(List<string> MyList)
+		{
+			return MyList.Count * 2;
+		}
 
-		public string DogGreeting(string animal)
+		public static string DogGreeting(string animal)
 		{
 			string greeting = "";
 
@@ -56,12 +61,29 @@ namespace DogApp
 			return greeting;
 		}
 
-		public string DogHobby()
+		public static string DogHobby(string hobby)
 		{
-			Console.WriteLine("What is your favorite hobby, doggy?");
-			string hobby = Console.ReadLine();
+			//Console.WriteLine("What is your favorite hobby, doggy?");
+			//string hobby = Console.ReadLine();
 
-			return "The dog's favorite hobby is " + hobby + ".";
+			//return "The dog's favorite hobby is " + hobby + ".";
+			string reaction = "";
+
+			if (hobby == "chewing toy")
+			{
+				reaction = "tail wagging";
+			}
+			if (hobby == "eating")
+			{
+				reaction = "lapping mouth";
+			}
+			if (hobby == "bath")
+			{
+				reaction = "splashing";
+			}
+
+			return reaction;
 		}
 	}
 }
+
